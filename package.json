@@ -1,0 +1,12 @@
+{
+  "name": "jspeed",
+  "version": "1.0.3",
+  "description": "Realiza funciones largas en un par de cliks",
+  "main": "module/index.js",
+  "keywords": [],
+  "author": "Marc Medrano",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0"
+  }
+}
