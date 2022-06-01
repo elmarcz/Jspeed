@@ -2,12 +2,6 @@ const config = require('./config')
 const colorNpm = require('colors')
 const jspeed = {
     /**
-     * @param {Boolean} value The state of the start message.
-     */
-    startMsg: function noStartMsg(value){
-
-    },
-    /**
      *  @param {string} element Print an element
     */
     print: function print(element) {
