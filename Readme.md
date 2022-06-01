@@ -23,6 +23,9 @@ const Jspeed = require('jspeed') // Importa el modulo jspeed
 <h1><a href="https://www.npmjs.com/package/insultjs?activeTab=versions">V 1.0.5</a></h1>
 <p><b>Cambios-></b> Varias funciones añadidas y primera beta abierta</p>
 
+### 📥 Jspeed
+- [Repository](https://github.com/elmarcz/Jspeed)
+
 
 ### 💂 Stay in touch
 - [Portfolio](https://elmarcz.github.io/portfolio/)

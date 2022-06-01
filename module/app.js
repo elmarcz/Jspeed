@@ -11,7 +11,7 @@ const jspeed = {
      * @param {string} color The color to set
      * @return {string} Returns a string with the color you want
     */
-    color: function printColor(element, color) {
+    color: function color(element, color) {
         const colors = ["black", "red", "green", "blue", "yellow", "magenta", "cyan", "white", "gray"]
         if (!colors.includes(color)) {
             console.log(colorNpm.red(`[${config.nameModule}] ${color} color could not be set!`))
