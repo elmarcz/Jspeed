@@ -25,6 +25,7 @@ const Jspeed = require('jspeed') // Importa el modulo jspeed
 
 ### 📥 Jspeed
 - [Repository](https://github.com/elmarcz/Jspeed)
+- [Documentation](https://elmarcz.github.io/Jspeed)
 
 
 ### 💂 Stay in touch
