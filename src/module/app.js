@@ -1,9 +1,11 @@
 const colorNpm = require('colors')
-const jspeed = {
+const fetch = require('node-fetch')
+
+module.exports = {
     /**
      *  @param {string} element Print an element
     */
-    print: function print(element) {
+    print: (element) => {
         console.log(element)
     },
     /**
@@ -11,7 +13,7 @@ const jspeed = {
      * @param {string} color The color to set
      * @return {string} Returns a string with the color you want
     */
-    color: function color(element, color) {
+    color: (element, color) => {
         const colors = ["black", "red", "green", "blue", "yellow", "magenta", "cyan", "white", "gray"]
         if (!colors.includes(color)) {
             console.log(colorNpm.red(`[${config.nameModule}] ${color} color could not be set!`))
@@ -50,7 +52,7 @@ const jspeed = {
      * @param {string} color The color to set
      * @return {string} Prints a string with the color you want
     */
-    printColor: function printColor(element, color) {
+    printColor: (element, color) => {
         const colors = ["black", "red", "green", "blue", "yellow", "magenta", "cyan", "white", "gray"]
         if (!colors.includes(color)) {
             console.log(colorNpm.red(`[${config.nameModule}] ${color} color could not be set!`))
@@ -88,7 +90,7 @@ const jspeed = {
      * @param {string} element The element to return
      * @return {string} Print the element with a space
     */
-    printLn: function printLn(element) {
+    printLn: (element) => {
         console.log(`\n ${element} \n`)
     },
     /**
@@ -96,35 +98,35 @@ const jspeed = {
      * @param {string} n2 The largest number
      * @return {string} Returns a random number between n1 and n2.
     */
-    random: function random(n1, n2) {
+    random: (n1, n2) => {
         return Math.floor(Math.random() * (n2 - n1) + n1);
     },
     /**
      * @param {string} element The element to be analyzed
      * @return {string} Returns the type of the element
     */
-    type: function type(element) {
+    type: (element) => {
         return typeof element
     },
     /**
      * @param {string} String The element to be converted
      * @return {string} Returns the string converted to integer
     */
-    toInt: function toInt(String) {
+    toInt: (String) => {
         return Number.parseInt(String)
     },
     /**
      * @param {string} Number The element to be converted
      * @return {string} Returns the integer converted to string
     */
-    toStr: function toStr(Number) {
+    toStr: (Number) => {
         return '' + Number + ''
     },
     /**
      * @param {string} length The token length
      * @return {string} Returns a randomly generated token with numbers and letters
     */
-    genToken: function genToken(length) {
+    genToken: (length) => {
         let token = ''
         function gToken() {
             const letters = [
@@ -151,7 +153,7 @@ const jspeed = {
      * @param {string} length The token length
      * @return {string} Returns a randomly generated token with numbers only. 
     */
-    genNumToken: function genNumToken(length) {
+    genNumToken: (length) => {
         let token = ''
         function gToken() {
             const letters = [
@@ -171,7 +173,7 @@ const jspeed = {
      * @param {string} length The token length
      * @return {string} Returns a randomly generated token with letters only. 
     */
-    genStrToken: function genStrToken(length) {
+    genStrToken: (length) => {
         let token = ''
         function gToken() {
             const letters = [
@@ -198,7 +200,7 @@ const jspeed = {
      * @param {string} host The server host
      * @return Create a simple http server on a custom host
     */
-    server: function server(port, file, host) {
+    server: (port, file, host) => {
         try {
             const http = require("http");
             const requestListener = function (req, res) {
@@ -220,8 +222,7 @@ const jspeed = {
      * @param {string} id The property to search
      * @return {string} Returns the result of the search in array
     */
-    findById: function findById(array, id) {
-        
+    findById: (array, id) => {
         const result = array.find(e => e.id == id);
         if (result == undefined) {
             return colorNpm.red(`[${config.nameModule}] No item found with id ${id}`)
@@ -234,7 +235,7 @@ const jspeed = {
      * @param {string} name The property to search
      * @return {string} Returns the result of the search in array
     */
-    findByName: function findByName(array, name) {
+    findByName: (array, name) => {
         const result = array.find(e => e.name == name);
         if (result == undefined) {
             return colorNpm.red(`[${config.nameModule}] No item found with name ${name}`)
@@ -246,9 +247,48 @@ const jspeed = {
      * @param {string} string The text to be converted
      * @return {string} Returns the text with the first capital letter
     */
-    firstCapital: function firstCapital(string) {
+    firstCapital: (string) => {
         const letter = string.slice(1);
+    },
+    /**
+     * @param {Array} array The array to check
+     * @return {boolean} Returns true if the array is empty
+     */
+    isEmpty: (array) => {
+        return Array.isArray(array) && !array.length
+    },
+    /**
+     * @return {string} Returns an HEX color
+     */
+    randomColor: () => {
+        return `#${Math.floor(Math.random() * 0xffffff).toString(16).padEnd(6, '0')}`
+    },
+    /**
+     * @return {object} Returns object with all the properties
+     */
+    date: () => {
+        const date2 = new Date();
+        return {
+            Year: date2.getFullYear(),
+            Month: date2.getMonth(),
+            Day: date2.getDay(),
+            Hour: date2.getHours(),
+            Minute: date2.getMinutes(),
+            Second: date2.getSeconds(),
+            Milisecond: date2.getMilliseconds()
+        }
+    },
+    /**
+     * @return {boolean} Returns true if the web is online
+     */
+    isWorking: async(url) => {
+        const response = await fetch(url);
+        if (response.status == 200){
+            return true;
+        } else if(response.status == 404){
+            return false;
+        } else {
+            return `HTTP [${response.status}] code could not be interpreted`
+        }
     }
 }
-
-module.exports = jspeed

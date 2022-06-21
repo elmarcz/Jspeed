@@ -1,2 +1,5 @@
 .npmignore
-testing
+node_modules
+src/testing
+package-lock.json
+.gitignore
