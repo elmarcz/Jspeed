@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://raw.githubusercontent.com/elmarcz/Jspeed/master/public/Jspeed.png" height='150px' alt="Jspeed logo"/>  
+   <img src="https://raw.githubusercontent.com/elmarcz/Jspeed/master/src/public/Jspeed.png" height='150px' alt="Jspeed logo"/>  
 </p>
 <h1 align="center">Jspeed</h1>
 <p align="center">Realiza funciones largas en un par de cliks</p>
