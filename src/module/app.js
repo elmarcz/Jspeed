@@ -277,18 +277,5 @@ module.exports = {
             Second: date2.getSeconds(),
             Milisecond: date2.getMilliseconds()
         }
-    },
-    /**
-     * @return {boolean} Returns true if the web is online
-     */
-    isWorking: async(url) => {
-        const response = await fetch(url);
-        if (response.status == 200){
-            return true;
-        } else if(response.status == 404){
-            return false;
-        } else {
-            return `HTTP [${response.status}] code could not be interpreted`
-        }
     }
 }
