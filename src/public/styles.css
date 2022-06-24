@@ -15,12 +15,28 @@ body{
 
 nav{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
-nav h1{
+nav .title {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+nav .title h1{
     font-size: 2.5em;
     transition: all 300ms
+}
+
+nav .flags{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 120px;
 }
 
 .main{
