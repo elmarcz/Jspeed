@@ -16,6 +16,7 @@ npm i jspeed
 ## Documentation 🧧
 ```javascript
 const Jspeed = require('jspeed') // Importa el modulo jspeed
+import Jspeed from 'jspeed' // Importa el modulo jspeed (EM6)
 ```
 
 
