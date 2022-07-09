@@ -268,10 +268,11 @@ module.exports = {
      */
     date: () => {
         const date2 = new Date();
+        const month = date2.getMonth()
         return {
             Year: date2.getFullYear(),
-            Month: date2.getMonth(),
-            Day: date2.getDay(),
+            Month: month + 1,
+            Day: date2.getDate(),
             Hour: date2.getHours(),
             Minute: date2.getMinutes(),
             Second: date2.getSeconds(),
